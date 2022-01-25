@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  /* background: #000000 ; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-container {
+  position: relative;
+  width: 290px;
+  height: 400px;
+  background: #121212;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+.main-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url(../Image/profile.jpg) center / cover;
+  transition: 7s ease;
+}
+.main-container::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background: linear-gradient(to top, #121212 6%, transparent); */
+  opacity: 0;
+  transition: 7s ease;
+  z-index: 1;
+}
+.info {
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  width: 100%;
+  height: 110px;
+  text-align: center;
+  font-size: 25px;
+  font-family: "Poppins", sans-serif;
+  opacity: 0;
+  transition: 7s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
+}
+#name {
+  font-weight: bolder;
+}
+.link a {
+
+  color: rgb(255, 255, 255);
+  font-size: 50px;
+  padding: 10px 13px;
+}
+.main-container:hover .info {
+  opacity: 1;
+}
+.main-container:hover::before {
+  opacity: 1;
+}
+.main-container:hover::after {
+  transform: scale(1.06);
+}
